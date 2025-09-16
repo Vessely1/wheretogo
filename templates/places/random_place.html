@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Куди піти сьогодні?</h1>
+{% if place %}
+    <div>
+        <h3>{{ place.name }}</h3>
+        <p>{{ place.description }}</p>
+        <p>Тип: {{ place.get_place_type_display }}</p>
+        <p>Локація: {% if place.location %}{{ place.location }}{% else %}Secret place👀{% endif %}</p>
+        <p>Рейтинг: {{ place.rating }} ★</p>
+    </div>
+{% else %}
+    <p>Ще немає місць. <a href="{% url 'places:add_place' %}">Додайте перше!</a></p>
+{% endif %}
+<a href="{% url 'places:home' %}">На головну</a>
+{% endblock %}

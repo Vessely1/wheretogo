@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Ласкаво просимо на "Куди піти?"</h1>
+<p>Знайди найкращі місця для відпочинку!</p>
+
+<a href="{% url 'places:random_place' %}">Куди піти сьогодні?</a>
+{% endblock %}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Куди піти?{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'places:home' %}">Головна</a>
+            <a href="{% url 'places:place_list' %}">Список місць</a>
+            <a href="{% url 'places:add_place' %}">Додати місце</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>Створено Vesselyi Nestor © 2025</p>
+    </footer>
+</body>
+</html>

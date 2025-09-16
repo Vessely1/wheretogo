@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ place.name }}</h1>
+<img src="{{ place.image.url }}" alt="{{ place.name }}" width="300">
+<p><strong>Опис:</strong> {{ place.description }}</p>
+<p><strong>Тип:</strong> {{ place.get_place_type_display }}</p>
+<p><strong>Локація:</strong> {% if place.location %}{{ place.location }}{% else %}Secret place👀{% endif %}</p>
+<p><strong>Рейтинг:</strong> {{ place.rating }} ★</p>
+<p><strong>Додано:</strong> {{ place.created_at|date:"d.m.Y" }}</p>
+<a href="{% url 'places:place_list' %}">← Назад до списку</a>
+{% endblock %}

@@ -1,0 +1,9 @@
+<div class="place-card">
+    <img src="{{ place.image.url }}" alt="{{ place.name }}" width="200">
+    <h3><a href="{% url 'places:place_detail' place.pk %}">{{ place.name }}</a></h3>
+    <p>{{ place.description|truncatewords:10 }}</p>
+    <p>Тип: {{ place.get_place_type_display }}</p>
+    <p>Локація: {% if place.location %}{{ place.location }}{% else %}Secret place👀{% endif %}</p>
+    <p>Рейтинг: {{ place.rating }} ★</p>
+    <p>Додано: {{ place.created_at|date:"d.m.Y" }}</p>
+</div>

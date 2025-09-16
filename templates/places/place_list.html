@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Список місць</h1>
+{% for place in places %}
+    {% include 'places/includes/place_card.html' %}
+{% empty %}
+    <p>Ще немає місць. <a href="{% url 'places:add_place' %}">Додайте перше!</a></p>
+{% endfor %}
+{% endblock %}
